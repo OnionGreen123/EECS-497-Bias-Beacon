@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Bias Beacon",
+  "version": "1.0.0",
+  "description": "A minimal prototype for highlighting potentially biased or emotionally loaded language on webpages.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "Bias Beacon",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
